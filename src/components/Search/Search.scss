@@ -1,0 +1,10 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    .search-box {
+        &__input-wrapper {
+            position: relative;
+        }
+    }
+}
+

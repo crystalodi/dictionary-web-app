@@ -1,13 +1,51 @@
-body {
+@import-normalize;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Inconsolata Bold';
+  src: url('./fonts/Inconsolata-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inconsolata Regular';
+  src: url('./fonts/Inconsolata-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter Bold';
+  src: ('./fonts/Inter-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('./fonts/Inter-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lora Bold';
+  src: ('./fonts/Lora-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Lora Bold Italic';
+  src: ('./fonts/Lora-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lora Regular';
+  src: ('./fonts/Lora-Regular.ttf');
+  font-weight: 400;
 }
