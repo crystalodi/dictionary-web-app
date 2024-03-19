@@ -1,9 +1,11 @@
-import './App.scss';
+import './App.css';
 
 function App() {
+  document.body.setAttribute('data-theme', 'dark');
+  document.body.setAttribute('data-font-style', 'mono');
   return (
-    <div className="App" data-theme="test">
-      kdkdkdk
+    <div className="App">
+      Aliquam
     </div>
   );
 }

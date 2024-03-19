@@ -1,0 +1,5 @@
+.App {
+    font-family: var(--heading-large-font-family);
+    font-size: var(--heading-large-font-size);
+    line-height: var(--heading-large-line-height);
+}

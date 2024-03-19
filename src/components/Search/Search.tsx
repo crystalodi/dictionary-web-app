@@ -1,5 +1,5 @@
 import './Search.scss';
-import { ReactComponent as SearchBoxIcon } from './icon-search.svg';
+import { ReactComponent as SearchBoxIcon } from '../../assets/icons/icon-search.svg';
 import { useRef, useState } from 'react';
 
 function Search() {
