@@ -1,0 +1,33 @@
+[data-theme="dark"] {
+    --primary-background-color: #050505;
+    --primary-text-color: #fff;
+    --header-font-select-text-color: #fff;
+    --header-font-select-background-color: #050505;
+    --header-theme-switch-track-color: #a445ed;
+    --header-theme-icon-color: #a445ed;
+    --search-input-background-color: #1f1f1f;
+    --search-input-text-color: #fff;
+    --heading-large-text-color: #fff;
+}
+
+[data-theme="light"] {
+    --primary-background-color: #fff;
+    --primary-text-color: #050505;
+    --header-font-select-background-color: #fff;
+    --header-font-select-text-color: #2d2d2d;
+    --header-theme-switch-track-color: #757575;
+    --header-theme-icon-color: #757575;
+    --search-input-background-color: #f4f4f4;
+    --search-input-text-color: #2d2d2d;
+    --heading-large-text-color: #2d2d2d;
+}
+
+:root {
+    --search-input-error-outline-color: #FF5252;
+    --search-input-active-outline-color: #A445ED;
+    --search-input-error-text-color: #FF5252;
+    --header-logo-icon-color: #757575;
+    --header-theme-switch-thumb-color: #fff;
+    --heading-medium-text-color: #A445ED; 
+}
+

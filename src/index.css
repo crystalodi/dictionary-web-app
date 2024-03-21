@@ -1,75 +1,8 @@
-@import-normalize;
-
-@font-face {
-    font-family: "Inconsolata Regular";
-    src: url('./assets/fonts/Inconsolata-Regular.ttf');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Inter Regular";
-    src: url('./assets/fonts/Inter-Regular.ttf');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Lora Regular";
-    src: url('./assets/fonts/Lora-Regular.ttf');
-    font-weight: 400;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --search-input-error-text: #ff5252;
-    --heading-large-font-size: 64px;
-    --heading-large-line-height: 77px;
-    --heading-medium-font-size: 24px;
-    --heading-medium-line-height: 29px;
-    --heading-small-font-size: 20px;
-    --heading-small-line-height: 24px;
-    --body-medium-font-size: 18px;
-    --body-medium-line-height: 24px;
-    --body-small-font-size: 14px;
-    --body-small-line-height: 17px;
-    --definition-speech-font-family: 'Inter Regular';
-}
-
-[data-theme="light"] {
-    --primary-background-color: #fff;
-    --primary-text-color: #050505;
-}
-
-[data-theme="dark"] {
-    --primary-background-color: #050505;
-    --primary-text-color: #fff;
-}
-
-[data-font-style="sans-serif"] {
-    --heading-large-font-family: "Inter Regular";
-    --font-family: "Inter Regular";
-}
-
-[data-font-style="mono"] {
-    --heading-large-font-family: "Inconsolata Regular";
-    --font-family: "Inconsolata Regular";
-}
-
-[data-font-style="serif"] {
-    --heading-large-font-family: "Lora Regular";
-    --font-family: "Lora Regular";
-}
+@import url("./assets/css/reset.css");
+@import url("./assets/css/typography.css");
+@import url("./assets/css/theme.css");
 
 body {
-    font-family: var(--font-family);
-    font-size: var(--body-medium-font-size);
-    line-height: var(--body-medium-line-height);
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
 }

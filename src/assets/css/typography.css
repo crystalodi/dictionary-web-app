@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("../fonts/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inconsolata Bold";
+    src: url("../fonts/Inconsolata-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter Bold";
+    src: url("../fonts/Inter-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("../fonts/Lora-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Lora Bold Italic";
+    src: url("../fonts/Lora-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Lora Bold";
+    src: url("../fonts/Lora-Bold.ttf");
+}
+
+[data-font-style="mono"] {
+    --heading-large-font-family: "Inconsolata Bold";
+    --font-family: "Inconsolata"
+}
+
+[data-font-style="sans-serif"] {
+    --heading-large-font-family: "Inter Bold";
+    --font-family: "Inter"
+}
+
+[data-font-style="serif"] {
+    --heading-large-font-family: "Lora Bold";
+    --font-family: "Lora"
+}
+
+:root {
+    --heading-large-font-size: 64px;
+    --heading-large-line-height: 72px;
+    --heading-medium-font-size: 24px;
+    --heading-medium-line-height: 29px;
+    --heading-small-font-size: 20px;
+    --heading-small-line-height: 24px;
+    --body-medium-font-size: 18px;
+    --body-medium-line-height: 24px;
+    --body-small-font-size: 14px;
+    --body-small-line-height: 17px;
+}
