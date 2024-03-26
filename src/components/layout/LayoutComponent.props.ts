@@ -1,7 +1,5 @@
-import { ReactElement } from "react";
-
 interface LayoutProps {
-    children?: string | ReactElement;
+    children?: React.ReactNode;
 }
 
 export type LayoutComponentProps = LayoutProps;

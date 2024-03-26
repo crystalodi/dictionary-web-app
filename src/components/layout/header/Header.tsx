@@ -8,5 +8,3 @@ export const Header = (props: LayoutComponentProps) => {
         </header>
     );
 }
-
-export default Header;

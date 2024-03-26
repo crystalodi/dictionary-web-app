@@ -1,5 +1,5 @@
-import { Container } from './components/layout'
-import { Header } from './components/layout'
+import { Container } from "./components/layout";
+import { Search } from "./components/search";
 
 function App() {
   document.body.setAttribute('data-theme', 'light');
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Header></Header>
+        <Search/>
       </Container>
     </div>
   );

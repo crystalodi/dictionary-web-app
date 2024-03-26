@@ -8,5 +8,3 @@ export const Main = (props: LayoutComponentProps) => {
         </main>
     )
 }
-
-export default Main;

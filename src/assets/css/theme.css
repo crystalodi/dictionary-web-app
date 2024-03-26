@@ -25,6 +25,7 @@
 :root {
     --search-input-error-outline-color: #FF5252;
     --search-input-active-outline-color: #A445ED;
+    --search-input-caret-color: #a445ed;
     --search-input-error-text-color: #FF5252;
     --header-logo-icon-color: #757575;
     --header-theme-switch-thumb-color: #fff;

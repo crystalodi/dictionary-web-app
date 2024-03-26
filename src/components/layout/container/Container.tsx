@@ -9,5 +9,3 @@ export const Container = (props: LayoutComponentProps) => {
         </div>
     )
 }
-
-export default Container;
