@@ -1,6 +1,6 @@
 import { LayoutComponentProps } from "../LayoutComponent.props";
 
-export const Main = (props: LayoutComponentProps) => {
+const Main = (props: LayoutComponentProps) => {
     const { children } = props;
     return (
         <main>
@@ -8,3 +8,5 @@ export const Main = (props: LayoutComponentProps) => {
         </main>
     )
 }
+
+export default Main;

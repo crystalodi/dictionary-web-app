@@ -1,6 +1,6 @@
 import { LayoutComponentProps } from "../LayoutComponent.props"
 
-export const Header = (props: LayoutComponentProps) => {
+const Header = (props: LayoutComponentProps) => {
     const { children } = props;
     return (
         <header>
@@ -8,3 +8,5 @@ export const Header = (props: LayoutComponentProps) => {
         </header>
     );
 }
+
+export default Header;

@@ -30,6 +30,10 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+            background-color: transparent;
+            &:disabled {
+                pointer-events: none;
+            }
         }
     }
 

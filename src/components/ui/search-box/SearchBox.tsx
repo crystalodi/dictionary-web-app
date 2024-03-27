@@ -1,9 +1,9 @@
-import { SearchInputComponentProps } from "./SearchInput.props"
+import { SearchBoxComponentProps } from "./SearchBox.props"
 import { ReactComponent as SearchBoxIcon } from "../../../assets/icons/icon-search.svg";
 import "./SearchInput.scss";
 import { useRef } from "react";
 
-export const SearchInput = (props: SearchInputComponentProps) => {
+const SearchBox = (props: SearchBoxComponentProps) => {
     const {
         handleDictionarySearch,
         error
@@ -17,6 +17,12 @@ export const SearchInput = (props: SearchInputComponentProps) => {
         }
     }
 
+    const handleOnKeyUp = (e: React.KeyboardEvent) => {
+        if (e.code === 'Enter') {
+            handleSearch();
+        }
+    }
+
     const inputFieldClasses = `search-box-input ${error ? 'search-box-input--error' : ''}`
 
     const microcopyClasses = `search-box__microcopy ${error ? 'search-box__microcopy--error' : ''}`
@@ -24,12 +30,14 @@ export const SearchInput = (props: SearchInputComponentProps) => {
     return (
         <div className="search-box">
             <div className="search-box__input-wrapper">
-                <input type="text" className={inputFieldClasses} placeholder="Search for any word..." ref={searchInputRef}/>
-                <span role="button" tabIndex={0} className="search-box-input-button" onClick={handleSearch}>
+                <input type="text" className={inputFieldClasses} placeholder="Search for any word..." ref={searchInputRef} onKeyUp={handleOnKeyUp}/>
+                <button className="search-box-input-button" onClick={handleSearch}>
                     <SearchBoxIcon/>
-                </span>
+                </button>
             </div>
             <div className={microcopyClasses}>Whoops, can't be empty...</div>
         </div>
     )
 }
+
+export default SearchBox;
