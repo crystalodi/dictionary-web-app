@@ -1,6 +1,6 @@
 interface SearchBoxProps extends React.ComponentPropsWithoutRef<'input'> {
     handleDictionarySearch: (searchTerm?: string) => void;
-    error?: boolean;
+    validationError?: boolean;
 }
 
 export type SearchBoxComponentProps = SearchBoxProps;

@@ -1,0 +1,20 @@
+.not-found {
+    margin-top: 132px;
+    text-align: center;
+    &-emoji {
+        font-size: 64px;
+        margin-bottom: 44px;
+    }
+    &-title {
+        margin-bottom: 24px;
+        font-family: var(--heading-large-font-family);
+        font-size: 20px;
+        color: var(--not-found-message-title);
+        line-height: normal;
+    }
+    &-message {
+        font-size: var(--body-medium-font-size);
+        line-height: var(--body-medium-line-height);
+        color: var(--not-found-message-text);
+    }
+}

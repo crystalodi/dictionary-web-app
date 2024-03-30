@@ -1,12 +1,12 @@
 import { SearchBoxComponentProps } from "./SearchBox.props"
 import { ReactComponent as SearchBoxIcon } from "../../../assets/icons/icon-search.svg";
-import "./SearchInput.scss";
+import "./SearchBox.scss";
 import { useRef } from "react";
 
 const SearchBox = (props: SearchBoxComponentProps) => {
     const {
         handleDictionarySearch,
-        error
+        validationError
     } = props;
 
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -23,9 +23,9 @@ const SearchBox = (props: SearchBoxComponentProps) => {
         }
     }
 
-    const inputFieldClasses = `search-box-input ${error ? 'search-box-input--error' : ''}`
+    const inputFieldClasses = `search-box-input ${validationError ? 'search-box-input--error' : ''}`
 
-    const microcopyClasses = `search-box__microcopy ${error ? 'search-box__microcopy--error' : ''}`
+    const microcopyClasses = `search-box__microcopy ${validationError ? 'search-box__microcopy--error' : ''}`
 
     return (
         <div className="search-box">

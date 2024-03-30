@@ -1,5 +1,8 @@
 .search {
     display: flex;
     flex-direction: column;
+    .search__definition {
+        margin-top: 52px;
+    }
 }
 

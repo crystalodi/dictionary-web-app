@@ -1,5 +1,3 @@
-interface LayoutProps {
+export type LayoutComponentProps = {
     children?: React.ReactNode;
-}
-
-export type LayoutComponentProps = LayoutProps;
+};
