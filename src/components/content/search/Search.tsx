@@ -4,11 +4,12 @@ import getDefinition from '../../../utils/getDefinition';
 import Main from '../../layout/main';
 import SearchBox from '../../ui/search-box';
 import NotFound from '../not-found';
-import { Definition, DefinitionNotFound } from '../../../utils/getDefinition.types';
+import { DictionaryDefinition, DefinitionNotFound } from '../../../utils/getDefinition.types';
+import Definition from '../definition';
 
 const Search = () => {
     const [isError, setIsError] = useState<boolean>();
-    const [definitions, setDefinitions] = useState<Definition[] | DefinitionNotFound>();
+    const [definitions, setDefinitions] = useState<DictionaryDefinition[] | DefinitionNotFound>();
 
     async function handleSearch(searchTerm?: string)  {
         if (!searchTerm) {
@@ -22,17 +23,14 @@ const Search = () => {
         setDefinitions(res);
     }
 
-
     return (
         <Main>
             <SearchBox handleDictionarySearch={handleSearch} validationError={isError}/>
             <div className='search'>
                 {!!definitions && <>
-                    {Array.isArray(definitions) ? (
-                        <div className='search__definition'>
-                           {definitions.toString()}
-                        </div>
-                    ) : (<NotFound {...definitions}/>) }
+                    {Array.isArray(definitions) ? (<div className='search__definitions'>
+                        {definitions.map((definition, index) => <Definition {...definition} key={definition.word + index}/>)}
+                    </div>) : (<NotFound {...definitions}/>) }
                 </>}
             </div>
         </Main>

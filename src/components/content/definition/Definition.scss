@@ -1,0 +1,28 @@
+.definition {
+    .definition__header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+        height: 114px;
+        &-audio {
+            margin-left: auto;
+            align-self: center;
+        }
+        &__term {
+            padding-left: 1px;
+            &-word {
+                font-family: var(--heading-large-font-family);
+                font-size: var(--heading-large-font-size);
+                line-height: var(--heading-large-line-height);
+                color: var(--heading-large-text-color)
+            }
+            &-phonetic {
+                margin-top: 8px;
+                font-family: var(--heading-medium-font-family);
+                font-size: var(--heading-medium-font-size);
+                line-height: var(--heading-medium-line-height);
+                color: var(--dictionary-term-word-color);
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { NotFoundProps } from './NotFound.props';
+import { DefinitionNotFound as NotFoundProps } from '../../../utils/getDefinition.types';
 import './NotFound.scss';
 
 const NotFound = (props: NotFoundProps) => {
