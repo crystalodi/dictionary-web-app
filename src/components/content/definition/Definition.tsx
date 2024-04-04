@@ -1,9 +1,9 @@
 import {DictionaryDefinition as DefinitionProps} from '../../../utils/getDefinition.types'
 import PlayButton from '../../ui/play-button';
+import Meaning from '../meaning';
 import './Definition.scss';
 
-const Definition = (props: DefinitionProps) => {
-    const { word, phonetics, phonetic, meanings } = props;
+const Definition = ({ word, phonetics, phonetic, meanings }: Pick<DefinitionProps, 'word' | 'phonetics' | 'phonetic' | 'meanings'> ) => {
     const audio = phonetics.find(phonetic => phonetic.audio)?.audio ?? "";
     return (
         <div className='definition'>
@@ -18,8 +18,8 @@ const Definition = (props: DefinitionProps) => {
                     <PlayButton audio={audio}/>
                 </div>}
             </div>
-            <div className='definition__meaning'>
-
+            <div className='definition__meanings'>
+                {meanings.map((meaning, index) => <Meaning {...meaning} key={word + index + new Date().getTime() + '_meaning'}/>)}
             </div>
         </div>
     )

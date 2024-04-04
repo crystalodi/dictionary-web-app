@@ -3,17 +3,15 @@ type License = {
     url: string;
 }
 
-export type Phonetics = {
-  text: string;
-  audio: string;
-  sourceUrl: string;
-  license: string;
-}
-
 export type DictionaryDefinition = {
     word: string;
     phonetic: string;
-    phonetics: Array<Phonetics>;
+    phonetics: Array<{
+      text: string;
+      audio: string;
+      sourceUrl: string;
+      license?: License;
+    }>;
     meanings: Array<{
       partOfSpeech: string;
       definitions: Array<{

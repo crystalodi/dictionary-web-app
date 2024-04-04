@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './Search.scss';
 import getDefinition from '../../../utils/getDefinition';
 import Main from '../../layout/main';
 import SearchBox from '../../ui/search-box';
@@ -11,7 +10,7 @@ const Search = () => {
     const [isError, setIsError] = useState<boolean>();
     const [definitions, setDefinitions] = useState<DictionaryDefinition[] | DefinitionNotFound>();
 
-    async function handleSearch(searchTerm?: string)  {
+    async function handleSearch(searchTerm: string)  {
         if (!searchTerm) {
             setIsError(true);
             return;
@@ -25,11 +24,11 @@ const Search = () => {
 
     return (
         <Main>
-            <SearchBox handleDictionarySearch={handleSearch} validationError={isError}/>
+            <SearchBox handleDictionarySearch={handleSearch} validationError={isError} placeholder='Search for any word...'/>
             <div className='search'>
                 {!!definitions && <>
                     {Array.isArray(definitions) ? (<div className='search__definitions'>
-                        {definitions.map((definition, index) => <Definition {...definition} key={definition.word + index}/>)}
+                        {definitions.map((definition, index) => <Definition word={definition.word} phonetic={definition.phonetic} phonetics={definition.phonetics} meanings={definition.meanings} key={definition.word + index + new Date().getTime()}/>)}
                     </div>) : (<NotFound {...definitions}/>) }
                 </>}
             </div>

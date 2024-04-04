@@ -1,13 +1,12 @@
 import { useRef } from 'react';
 import {ReactComponent as PlayButtonIcon } from '../../../assets/icons/icon-play.svg';
 import './PlayButton.scss';
-import { Phonetics } from '../../../utils/getDefinition.types';
+import { DictionaryDefinition } from '../../../utils/getDefinition.types';
 
-const PlayButton = ({audio}: Pick<Phonetics, 'audio'>) => {
+type Phonetic = DictionaryDefinition["phonetics"][0];
+const PlayButton = ({audio}: Pick<Phonetic, 'audio'>) => {
     const audioElement = useRef<HTMLAudioElement>(null);
     const handlePlayButtonClick = () => audioElement.current && audioElement.current?.play();
-
-    console.log(audio);
 
     return (
         <>

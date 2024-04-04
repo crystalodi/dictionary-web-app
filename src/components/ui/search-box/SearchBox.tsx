@@ -6,14 +6,15 @@ import { useRef } from "react";
 const SearchBox = (props: SearchBoxComponentProps) => {
     const {
         handleDictionarySearch,
-        validationError
+        validationError,
+        placeholder
     } = props;
 
     const searchInputRef = useRef<HTMLInputElement>(null);
 
     const handleSearch = () => {
         if (typeof handleDictionarySearch === 'function') {
-            handleDictionarySearch(searchInputRef.current?.value);
+            handleDictionarySearch(searchInputRef.current?.value ?? "");
         }
     }
 
@@ -30,7 +31,7 @@ const SearchBox = (props: SearchBoxComponentProps) => {
     return (
         <div className="search-box">
             <div className="search-box__input-wrapper">
-                <input type="text" className={inputFieldClasses} placeholder="Search for any word..." ref={searchInputRef} onKeyUp={handleOnKeyUp}/>
+                <input type="text" className={inputFieldClasses} placeholder={placeholder} ref={searchInputRef} onKeyUp={handleOnKeyUp}/>
                 <button className="search-box-input-button" onClick={handleSearch}>
                     <SearchBoxIcon/>
                 </button>
