@@ -35,17 +35,20 @@
 
 [data-font-style="mono"] {
     --heading-large-font-family: "Inconsolata Bold";
-    --font-family: "Inconsolata"
+    --font-family: "Inconsolata";
+    --part-of-speech-font-family: "Inconsolata"
 }
 
 [data-font-style="sans-serif"] {
     --heading-large-font-family: "Inter Bold";
-    --font-family: "Inter"
+    --font-family: "Inter";
+    --part-of-speech-font-style: italic;
+    --part-of-speech-font-family: "Inter Bold"
 }
 
 [data-font-style="serif"] {
     --heading-large-font-family: "Lora Bold";
-    --font-family: "Lora"
+    --font-family: "Lora";
 }
 
 :root {
@@ -59,4 +62,6 @@
     --body-medium-line-height: 24px;
     --body-small-font-size: 14px;
     --body-small-line-height: 17px;
+    --part-of-speech-font-style: normal;
+    --part-of-speech-font-family: "Inter"
 }

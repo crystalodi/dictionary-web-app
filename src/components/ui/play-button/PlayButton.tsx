@@ -10,7 +10,7 @@ const PlayButton = ({audio}: Pick<Phonetic, 'audio'>) => {
 
     return (
         <>
-            <audio ref={audioElement}>
+            <audio ref={audioElement} preload='auto'>
                 <source src={audio} type="audio/mpeg"/>
             </audio>
             <button className='play-button' onClick={handlePlayButtonClick}>

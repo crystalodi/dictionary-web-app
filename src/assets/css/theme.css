@@ -9,6 +9,7 @@
     --search-input-text-color: #fff;
     --heading-large-text-color: #fff;
     --not-found-message-title: #fff;
+    --divider-border-top-color: #3a3a3a;
 }
 
 [data-theme="light"] {
@@ -22,6 +23,7 @@
     --search-input-text-color: #2d2d2d;
     --heading-large-text-color: #2d2d2d;
     --not-found-message-title: #2d2d2d;
+    --divider-border-top-color: #e3e3e3;
 }
 
 :root {

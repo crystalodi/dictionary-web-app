@@ -3,7 +3,9 @@ import PlayButton from '../../ui/play-button';
 import Meaning from '../meaning';
 import './Definition.scss';
 
-const Definition = ({ word, phonetics, phonetic, meanings }: Pick<DefinitionProps, 'word' | 'phonetics' | 'phonetic' | 'meanings'> ) => {
+type PickType = 'word' | 'phonetics' | 'phonetic' | 'meanings';
+
+const Definition = ({ word, phonetics, phonetic, meanings }: Pick<DefinitionProps, PickType> ) => {
     const audio = phonetics.find(phonetic => phonetic.audio)?.audio ?? "";
     return (
         <div className='definition'>

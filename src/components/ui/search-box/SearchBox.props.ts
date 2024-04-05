@@ -1,7 +1,5 @@
-interface SearchBoxProps extends React.ComponentPropsWithoutRef<'input'> {
+export type SearchBoxProps = {
     handleDictionarySearch: (searchTerm: string) => void;
     validationError?: boolean;
-}
-
-export type SearchBoxComponentProps = SearchBoxProps;
+} & React.ComponentPropsWithoutRef<'input'>;
 

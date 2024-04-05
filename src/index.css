@@ -2,8 +2,17 @@
 @import url("./assets/css/typography.css");
 @import url("./assets/css/theme.css");
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
+    line-height: var(--body-medium-line-height);
+    font-size: var(--body-medium-font-size);
+    min-height: 100%;
+    --moz-osx-font-smoothing: grayscale;
+    --webkit-font-smoothing: antialiased;
 }

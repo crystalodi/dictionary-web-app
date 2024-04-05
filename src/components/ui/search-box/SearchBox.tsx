@@ -1,9 +1,9 @@
-import { SearchBoxComponentProps } from "./SearchBox.props"
+import { SearchBoxProps } from "./SearchBox.props"
 import { ReactComponent as SearchBoxIcon } from "../../../assets/icons/icon-search.svg";
 import "./SearchBox.scss";
 import { useRef } from "react";
 
-const SearchBox = (props: SearchBoxComponentProps) => {
+const SearchBox = (props: SearchBoxProps) => {
     const {
         handleDictionarySearch,
         validationError,
