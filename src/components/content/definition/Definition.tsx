@@ -12,9 +12,9 @@ const Definition = ({ word, phonetics, phonetic, meanings }: Pick<DefinitionProp
             <div className='definition__header'>
                 <div className='definition__header__term'>
                     <h1 className='definition__header__term-word'>{word}</h1>
-                    <p className='definition__header__term-phonetic'>
+                    {phonetic && <p className='definition__header__term-phonetic'>
                         {phonetic}
-                    </p>
+                    </p>}
                 </div>
                 {audio && <div className='definition__header-audio'>
                     <PlayButton audio={audio}/>

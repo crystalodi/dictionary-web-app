@@ -16,6 +16,7 @@ export type DictionaryDefinition = {
       partOfSpeech: string;
       definitions: Array<{
         definition: string;
+        example?: string;
         synonyms: Array<string>;
         antonyms: Array<string>;
       }>
