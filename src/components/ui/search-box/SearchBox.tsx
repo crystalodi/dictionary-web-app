@@ -7,7 +7,8 @@ const SearchBox = (props: SearchBoxProps) => {
     const {
         handleDictionarySearch,
         validationError,
-        placeholder
+        placeholder,
+        disabled
     } = props;
 
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -31,8 +32,8 @@ const SearchBox = (props: SearchBoxProps) => {
     return (
         <div className="search-box">
             <div className="search-box__input-wrapper">
-                <input type="text" className={inputFieldClasses} placeholder={placeholder} ref={searchInputRef} onKeyUp={handleOnKeyUp}/>
-                <button className="search-box-input-button" onClick={handleSearch}>
+                <input type="text" className={inputFieldClasses} placeholder={placeholder} ref={searchInputRef} onKeyUp={handleOnKeyUp} disabled={disabled}/>
+                <button className="search-box-input-button" onClick={handleSearch} disabled={disabled}>
                     <SearchBoxIcon/>
                 </button>
             </div>

@@ -1,0 +1,29 @@
+.search {
+    &__definition {
+        &__source {
+            padding-top: 20px;
+            &__link {
+                display: flex;
+                align-items: center;
+                font-family: var(--font-family);
+                font-size: var(--body-small-font-size);
+                line-height: var(--body-small-line-height);
+                &-label {
+                    margin-right: 20px;
+                    color: #757575;
+                    text-decoration: underline;
+                }
+                &-icon {
+                    margin-left: 9px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                a,
+                a:visited {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

@@ -6,17 +6,12 @@ html {
     height: 100%;
 }
 
-#root {
-    height: 100vh;
-}
-
 body {
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
     line-height: var(--body-medium-line-height);
     font-size: var(--body-medium-font-size);
-    min-height: 100%;
     --moz-osx-font-smoothing: grayscale;
     --webkit-font-smoothing: antialiased;
 }
