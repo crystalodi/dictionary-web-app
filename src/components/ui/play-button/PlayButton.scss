@@ -1,4 +1,7 @@
 .play-button {
     background-color: transparent;
     cursor: pointer;
+    &:hover {
+        // add play-button-hover-fill-color
+    }
 }

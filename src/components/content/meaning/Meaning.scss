@@ -7,7 +7,9 @@
         margin-bottom: 40px;
         &-part-of-speech {
             font-size: var(--heading-medium-font-size);
+            // change to meaning-heading-part-of-speech-font-family
             font-family: var(--part-of-speech-font-family);
+            //change to meaning-heading-part-of-speech-font-style
             font-style: var(--part-of-speech-font-style);
             line-height: var(--heading-medium-line-height);
         }
@@ -22,9 +24,11 @@
             &__item {
                 padding-left: 10px;
                 &::marker {
+                    // change to meaning-definitions-list-item-marker-color
                     color: #8F19E8;
                 }
                 &-example {
+                    // change to meaning-definitions-list-item-example-text-color
                     color: #757575;
                     margin-top: 13px;
                 }
@@ -33,6 +37,7 @@
         &-heading {
             font-size: var(--heading-small-font-size);
             line-height: var(--heading-small-line-height);
+            // change to meaning-definitions-heading-text-color
             color: #757575;
             margin-bottom: 25px;
         }
@@ -46,6 +51,7 @@
             &-heading {
                 font-size: var(--heading-small-font-size);
                 line-height: var(--heading-small-line-height);
+                // change to meaning-other-terms-heading-text-color
                 color: #757575;
                 margin-right: 24px;
             }
@@ -54,6 +60,7 @@
                 flex-wrap: wrap;
                 column-gap: 12px;
                 &-item {
+                    // change to meaning-other-terms-list-item-text-color
                     color: #A445ED;
                     font-family: var(--heading-large-font-family);
                     font-size: 20px;;

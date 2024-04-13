@@ -1,12 +1,39 @@
+:root {
+    --color_050505: #050505;
+    --color_1f1f1f: #1f1f1f;
+    --color_2d2d2d: #2d2d2d;
+    --color_3a3a3a: #3a3a3a;
+    --color_757575: #757575;
+    --color_e9e9e9: #e9e9e9;
+    --color_f4f4f4: #f4f4f4;
+    --color_fff: #fff;
+    --color_a445ed: #a445ed;
+    --color_ff5252: #ff5252;
+    
+    --search-input-error-outline-color: var(--color_ff5252);
+    --search-input-active-outline-color: var(--color_a445ed);
+    --search-input-caret-color: var(--color_a445ed);
+    --search-input-error-text-color: var(--color_ff5252);
+
+    --header-theme-switch-thumb-color: var(--color_fff);
+
+    --heading-medium-text-color: var(--color_a445ed);
+
+    --not-found-message-text: var(--color_757575);
+    --dictionary-term-word-color: var(--color_a445ed);
+}
+
 [data-theme="dark"] {
     --primary-background-color: #050505;
     --primary-text-color: #fff;
+
     --header-font-select-text-color: #fff;
     --header-font-select-background-color: #050505;
     --header-theme-switch-track-color: #a445ed;
-    --header-theme-icon-color: #a445ed;
+
     --search-input-background-color: #1f1f1f;
     --search-input-text-color: #fff;
+
     --heading-large-text-color: #fff;
     --not-found-message-title: #fff;
     --divider-border-top-color: #3a3a3a;
@@ -15,26 +42,15 @@
 [data-theme="light"] {
     --primary-background-color: #fff;
     --primary-text-color: #050505;
+
     --header-font-select-background-color: #fff;
     --header-font-select-text-color: #2d2d2d;
     --header-theme-switch-track-color: #757575;
-    --header-theme-icon-color: #757575;
+
     --search-input-background-color: #f4f4f4;
     --search-input-text-color: #2d2d2d;
+
     --heading-large-text-color: #2d2d2d;
     --not-found-message-title: #2d2d2d;
     --divider-border-top-color: #e3e3e3;
 }
-
-:root {
-    --search-input-error-outline-color: #FF5252;
-    --search-input-active-outline-color: #A445ED;
-    --search-input-caret-color: #a445ed;
-    --search-input-error-text-color: #FF5252;
-    --header-logo-icon-color: #757575;
-    --header-theme-switch-thumb-color: #fff;
-    --heading-medium-text-color: #A445ED; 
-    --not-found-message-text: #757575;
-    --dictionary-term-word-color: #a445ed;
-}
-

@@ -4,7 +4,8 @@ import './index.css';
 import App from './components/app';
 import reportWebVitals from './reportWebVitals';
 
-
+document.body.setAttribute('data-theme', 'light');
+document.body.setAttribute('data-font-style', 'sans-serif');
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -33,25 +33,13 @@
     src: url("../fonts/Lora-Bold.ttf");
 }
 
-[data-font-style="mono"] {
-    --heading-large-font-family: "Inconsolata Bold";
-    --font-family: "Inconsolata";
-    --part-of-speech-font-family: "Inconsolata"
-}
-
-[data-font-style="sans-serif"] {
-    --heading-large-font-family: "Inter Bold";
-    --font-family: "Inter";
-    --part-of-speech-font-style: italic;
-    --part-of-speech-font-family: "Inter Bold"
-}
-
-[data-font-style="serif"] {
-    --heading-large-font-family: "Lora Bold";
-    --font-family: "Lora";
-}
-
 :root {
+    --mono-font-family: 'Inconsolata';
+    --mono-bold-font-family: 'Inconsolata Bold';
+    --sans-serif-font-family: 'Inter';
+    --sans-serif-bold-font-family: 'Inter Bold';
+    --serif-font-family: 'Lora';
+    --serif-bold-font-family: 'Lora Bold';
     --heading-large-font-size: 64px;
     --heading-large-line-height: 72px;
     --heading-medium-font-size: 24px;
@@ -63,5 +51,24 @@
     --body-small-font-size: 14px;
     --body-small-line-height: 17px;
     --part-of-speech-font-style: normal;
-    --part-of-speech-font-family: "Inter"
+    --part-of-speech-font-family: var(--sans-serif-font-family);
+}
+
+
+[data-font-style="mono"] {
+    --heading-large-font-family: var(--mono-bold-font-family);
+    --font-family: var(--mono-font-family);
+    --part-of-speech-font-family: var(--mono-font-family);
+}
+
+[data-font-style="sans-serif"] {
+    --heading-large-font-family: var(--sans-serif-bold-font-family);
+    --font-family: var(--sans-serif-font-family);
+    --part-of-speech-font-style: italic;
+    --part-of-speech-font-family: var(--sans-serif-bold-font-family);
+}
+
+[data-font-style="serif"] {
+    --heading-large-font-family: var(--serif-bold-font-family);
+    --font-family: var(--serif-font-family);
 }
