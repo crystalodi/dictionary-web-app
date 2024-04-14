@@ -4,7 +4,7 @@ import './PlayButton.scss';
 import { DictionaryDefinition } from '../../../utils/getDefinition.types';
 
 type Phonetic = DictionaryDefinition["phonetics"][0] & React.ComponentPropsWithoutRef<'button'>;
-const PlayButton = ({audio}: Pick<Phonetic, 'audio' | 'aria-label'>) => {
+const PlayButton = ({audio, ...restProps}: Pick<Phonetic, 'audio' | 'aria-label'>) => {
     const audioElement = useRef<HTMLAudioElement>(null);
     const handlePlayButtonClick = () => audioElement.current && audioElement.current?.play();
 
@@ -13,7 +13,7 @@ const PlayButton = ({audio}: Pick<Phonetic, 'audio' | 'aria-label'>) => {
             <audio ref={audioElement} preload='auto'>
                 <source src={audio} type="audio/mpeg"/>
             </audio>
-            <button className='play-button' onClick={handlePlayButtonClick}>
+            <button className='play-button' onClick={handlePlayButtonClick} {...restProps}>
                 <PlayButtonIcon/>
             </button>
         </>

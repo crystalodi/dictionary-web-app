@@ -25,19 +25,19 @@ const SearchBox = (props: SearchBoxProps) => {
         }
     }
 
-    const inputFieldClasses = `search-box-input ${validationError ? 'search-box-input--error' : ''}`
+    const inputFieldClasses = `search-box-input${validationError ? ' search-box-input--error' : ''}`
 
-    const microcopyClasses = `search-box__microcopy ${validationError ? 'search-box__microcopy--error' : ''}`
+    const microcopyClasses = `search-box__microcopy${validationError ? ' search-box__microcopy--error' : ''}`
 
     return (
         <div className="search-box">
             <div className="search-box__input-wrapper">
                 <input type="text" className={inputFieldClasses} placeholder={placeholder} ref={searchInputRef} onKeyUp={handleOnKeyUp} disabled={disabled}/>
-                <button className="search-box-input-button" onClick={handleSearch} disabled={disabled}>
+                <button className="search-box-input-button" onClick={handleSearch} disabled={disabled} aria-label='Search'>
                     <SearchBoxIcon/>
                 </button>
             </div>
-            <div className={microcopyClasses}>Whoops, can't be empty...</div>
+            {validationError && <div className={microcopyClasses}>Whoops, can't be empty...</div>}
         </div>
     )
 }

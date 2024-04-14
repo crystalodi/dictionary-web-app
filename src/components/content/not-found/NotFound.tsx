@@ -5,7 +5,7 @@ const NotFound = (props: NotFoundProps) => {
     return (
         <div className="not-found">
             <div className="not-found-emoji">&#128533;</div>
-            <h4 className="not-found-title">{props.title}</h4>
+            <div className="not-found-title" role="heading" aria-level={1}>{props.title}</div>
             <p className="not-found-message">
                 {props.message} {props.resolution}
             </p>

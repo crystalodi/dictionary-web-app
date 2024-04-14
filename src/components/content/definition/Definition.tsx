@@ -7,7 +7,7 @@ type PickType = 'word' | 'phonetics' | 'phonetic' | 'meanings';
 
 const Definition = ({ word, phonetics, phonetic, meanings }: Pick<DefinitionProps, PickType> ) => {
     const audio = phonetics.find(phonetic => phonetic.audio)?.audio ?? "";
-    const playButtonAriaLabel = `Play sound ${word}`;
+    const playButtonAriaLabel = audio && `Play sound ${word}`;
     return (
         <div className='definition'>
             <div className='definition__header'>
