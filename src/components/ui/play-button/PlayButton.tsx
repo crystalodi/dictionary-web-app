@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import {ReactComponent as PlayButtonIcon } from '../../../assets/icons/icon-play.svg';
+import { PlayButtonIcon } from '../../../assets/icons';
 import './PlayButton.scss';
 import { DictionaryDefinition } from '../../../utils/getDefinition.types';
 

@@ -1,8 +1,4 @@
 .definition {
-    margin-top: 52px;
-    &:last-child {
-        margin-bottom: 40px;
-    }
     &__header {
         display: flex;
         flex-direction: row;
@@ -17,7 +13,7 @@
                 font-size: var(--heading-large-font-size);
                 line-height: var(--heading-large-line-height);
                 // change to definition-heading-term-text-color
-                color: var(--heading-large-text-color)
+                color: var(--heading-large-text-color);
             }
             &-phonetic {
                 margin-top: 8px;
@@ -26,6 +22,35 @@
                 line-height: var(--heading-medium-line-height);
                 // change to definition-heading-term-phonetic-text-color
                 color: var(--dictionary-term-word-color);
+            }
+        }
+    }
+    &__meanings {
+        margin-bottom: 40px;
+    }
+    &__source {
+        padding-top: 20px;
+        &__link {
+            display: flex;
+            align-items: center;
+            font-family: var(--font-family);
+            font-size: var(--body-small-font-size);
+            line-height: var(--body-small-line-height);
+            &-label {
+                margin-right: 20px;
+                // change to search-defintion-source-link-label-text-color
+                color: #757575;
+                text-decoration: underline;
+            } 
+            &-icon {
+                margin-left: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            a,
+            a:visited {
+                color: var(--primary-text-color);
             }
         }
     }

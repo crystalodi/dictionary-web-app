@@ -5,8 +5,6 @@ import SearchBox from '../../ui/search-box';
 import NotFound from '../not-found';
 import { DictionaryDefinition, DefinitionNotFound } from '../../../utils/getDefinition.types';
 import Definition from '../definition';
-import Divider from '../../ui/divider';
-import { ReactComponent as NewWindowIcon } from '../../../assets/icons/icon-new-window.svg'
 import './Search.scss';
 
 const Search = () => {
@@ -30,44 +28,21 @@ const Search = () => {
 
     const renderDefinitions = (definitionsToRender: DictionaryDefinition[]) => {
         return (
-            <>
-                <div className='search__definitions'>
-                    {definitionsToRender.map((definition, index) => {
-                        const props = {
-                            word: definition.word,
-                            phonetics: definition.phonetics,
-                            phonetic: definition.phonetic,
-                            meanings: definition.meanings
-                        }
-                        return <Definition {...props} key={props.word + index + new Date().getTime()}/>
-                    })}
-                </div>
-                <>
-                    <Divider/>
-                    <div className='search__definition__source'>
-                        <div className='search__definition__source__link'>
-                            <div className='search__definition__source__link-label'>Source</div>
-                            <a href={definitionsToRender[0].sourceUrls[0]} target='_blank' rel="noreferrer">
-                                {definitionsToRender[0].sourceUrls[0]}
-                            </a>
-                            <div className='search__definition__source__link-icon'>
-                                <NewWindowIcon/>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            </>
+            <div className='search__definitions'>
+                {definitionsToRender.map((definition, index, arr) => {
+                    const props = {...definition, index, total: arr.length}
+                    return <Definition {...props} key={definition.word + index + new Date().getTime()}/>
+                })}
+            </div>
         )
     }
 
     return (
         <Main>
             <SearchBox handleDictionarySearch={handleSearch} validationError={isError} placeholder='Search for any word...' disabled={isSearching}/>
-            <div className='search'>
-                {!!definitions && <>
-                    {Array.isArray(definitions) ? (renderDefinitions(definitions)) : (<NotFound {...definitions}/>) }
-                </>}
-            </div>
+            {!!definitions && <div className='search'>
+                {Array.isArray(definitions) ? renderDefinitions(definitions) : <NotFound {...definitions}/>}
+            </div>}
         </Main>
     )
 }

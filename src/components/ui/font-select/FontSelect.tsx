@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as IconArrowDown } from '../../../assets/icons/icon-arrow-down.svg';
+import { ArrowDownIcon } from '../../../assets/icons';
 import { FontOption, FontSelectProps } from './FontSelect.props';
 import './FontSelect.scss';
 
@@ -73,7 +73,7 @@ const FontSelect = (props: FontSelectProps) => {
         <div className="font-select">
             <button className="font-select__button" aria-label='select font style' role='combobox' aria-controls='font-select-options' aria-expanded={isExpanded} onClick={toggleCombobox} tabIndex={0}>
                 <div className={labelClasses}>{fontSelectValue?.text}</div>
-                <div className="font-select__button-arrow-down-icon"><IconArrowDown/></div>
+                <div className="font-select__button-arrow-down-icon"><ArrowDownIcon title='toggle font styles'/></div>
             </button>
             <ul className={listBoxClassNames} role='listbox' tabIndex={-1} id="font-select-options">
                 {fontSelectOptions.map(option => renderFontSelectOption(option))}

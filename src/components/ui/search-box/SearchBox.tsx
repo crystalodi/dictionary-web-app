@@ -1,5 +1,5 @@
 import { SearchBoxProps } from "./SearchBox.props"
-import { ReactComponent as SearchBoxIcon } from "../../../assets/icons/icon-search.svg";
+import { SearchBoxIcon } from "../../../assets/icons";
 import "./SearchBox.scss";
 import { useRef } from "react";
 

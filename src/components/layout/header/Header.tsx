@@ -1,4 +1,4 @@
-import { ReactComponent as LogoIcon } from '../../../assets/icons/logo.svg';
+import { LogoIcon } from '../../../assets/icons';
 import FontSelect from '../../ui/font-select';
 import './Header.scss';
 const Header = () => {

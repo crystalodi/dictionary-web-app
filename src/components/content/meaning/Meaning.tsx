@@ -3,6 +3,10 @@ import Divider from "../../ui/divider";
 import './Meaning.scss';
 type MeaningProps = DictionaryDefinition["meanings"][0];
 type Definition = Omit<MeaningProps["definitions"][0], 'synonyms' | 'antonyms'> & { index: number };
+type OtherTerms = {
+    list: string[];
+    label: 'Antonyms' | 'Synonyms'
+}
 
 const Meaning = (props: MeaningProps) => {
     const { synonyms, antonyms, definitions, partOfSpeech } = props;
@@ -22,6 +26,22 @@ const Meaning = (props: MeaningProps) => {
         )
     }
 
+    const renderOtherTerms = (otherTerms: OtherTerms) => {
+        const { list, label } = otherTerms;
+        return (
+            <div className="meaning__other__terms">
+                <div className="meaning__other__terms-label">
+                    {label}
+                </div>
+                <div className="meaning__other__terms__list" role="list">
+                    {list.map((item, index) => <div className="meaning__other__terms__list-item" role="listitem" key={label + index + new Date().getTime()}>
+                        {item}
+                    </div>)}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="meaning">
             <div className="meaning__heading">
@@ -39,28 +59,8 @@ const Meaning = (props: MeaningProps) => {
                 </ul>
             </div>
             {showSynonymsAntonyms && <div className="meaning__other">
-                {!!synonyms.length && <div className="meaning__other__terms">
-                    <div className="meaning__other__terms-heading">
-                        Synonyms
-                    </div>
-                    <div className="meaning__other__terms__list" role="list">
-                        {synonyms.map((synonym, index) => 
-                        <div className="meaning__other__terms__list-item" key={synonym + index + new Date().getTime()} role="listitem">
-                            {synonym}
-                        </div>)}
-                    </div>
-                </div>}
-                {!!antonyms.length && <div className="meaning__other__terms">
-                    <div className="meaning__other__terms-heading">
-                        Antonyms
-                    </div>
-                    <div className="meaning__other__terms__list" role="list">
-                        {antonyms.map((antonym, index) => 
-                        <div className="meaning__other__terms__list-item" key={antonym + index + new Date().getTime()} role="listitem">
-                            {antonym}
-                        </div>)}
-                    </div>
-                </div>}
+                {!!synonyms.length && renderOtherTerms({label: 'Synonyms', list: synonyms})}
+                {!!antonyms.length && renderOtherTerms({label: 'Antonyms', list: antonyms})}
             </div>}
         </div>
     )
