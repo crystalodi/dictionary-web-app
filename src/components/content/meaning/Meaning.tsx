@@ -1,7 +1,7 @@
 import { DictionaryDefinition } from "../../../utils/getDefinition.types";
 import Divider from "../../ui/divider";
 import './Meaning.scss';
-type MeaningProps = DictionaryDefinition["meanings"][0];
+type MeaningProps = DictionaryDefinition["meanings"][0] & { handleTermSearch: (searchTerm: string) => Promise<void> };
 type Definition = Omit<MeaningProps["definitions"][0], 'synonyms' | 'antonyms'> & { index: number };
 type OtherTerms = {
     list: string[];
@@ -9,7 +9,7 @@ type OtherTerms = {
 }
 
 const Meaning = (props: MeaningProps) => {
-    const { synonyms, antonyms, definitions, partOfSpeech } = props;
+    const { synonyms, antonyms, definitions, partOfSpeech, handleTermSearch } = props;
     const showSynonymsAntonyms = !!synonyms.length || !!antonyms.length;
 
     const renderDefinitionItem = (meaning: Definition) => {
@@ -35,7 +35,7 @@ const Meaning = (props: MeaningProps) => {
                 </div>
                 <div className="meaning__other__terms__list" role="list">
                     {list.map((item, index) => <div className="meaning__other__terms__list-item" role="listitem" key={label + index + new Date().getTime()}>
-                        {item}
+                        <button onClick={() => handleTermSearch(item)}>{item}</button>
                     </div>)}
                 </div>
             </div>

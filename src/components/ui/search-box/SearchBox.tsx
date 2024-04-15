@@ -1,29 +1,16 @@
 import { SearchBoxProps } from "./SearchBox.props"
 import { SearchBoxIcon } from "../../../assets/icons";
 import "./SearchBox.scss";
-import { useRef } from "react";
+import { forwardRef } from "react";
 
-const SearchBox = (props: SearchBoxProps) => {
+const SearchBox = forwardRef<HTMLInputElement, SearchBoxProps>((props, ref) => {
     const {
-        handleDictionarySearch,
+        handleButtonClick,
         validationError,
         placeholder,
-        disabled
+        disabled,
+        ...restProps
     } = props;
-
-    const searchInputRef = useRef<HTMLInputElement>(null);
-
-    const handleSearch = () => {
-        if (typeof handleDictionarySearch === 'function') {
-            handleDictionarySearch(searchInputRef.current?.value ?? "");
-        }
-    }
-
-    const handleOnKeyUp = (e: React.KeyboardEvent) => {
-        if (e.code === 'Enter') {
-            handleSearch();
-        }
-    }
 
     const inputFieldClasses = `search-box-input${validationError ? ' search-box-input--error' : ''}`
 
@@ -32,14 +19,14 @@ const SearchBox = (props: SearchBoxProps) => {
     return (
         <div className="search-box">
             <div className="search-box__input-wrapper">
-                <input type="text" className={inputFieldClasses} placeholder={placeholder} ref={searchInputRef} onKeyUp={handleOnKeyUp} disabled={disabled}/>
-                <button className="search-box-input-button" onClick={handleSearch} disabled={disabled} aria-label='Search'>
+                <input type="text" className={inputFieldClasses} placeholder={placeholder} disabled={disabled} ref={ref} {...restProps}/>
+                <button className="search-box-input-button" onClick={handleButtonClick} disabled={disabled} aria-label='Search'>
                     <SearchBoxIcon/>
                 </button>
             </div>
             {validationError && <div className={microcopyClasses}>Whoops, can't be empty...</div>}
         </div>
     )
-}
+})
 
 export default SearchBox;

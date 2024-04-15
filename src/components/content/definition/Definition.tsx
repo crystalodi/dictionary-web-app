@@ -5,7 +5,7 @@ import Meaning from '../meaning';
 import { NewWindowIcon } from '../../../assets/icons';
 import './Definition.scss';
 
-type DefinitionProps = Omit<DictionaryDefinition, 'license'> & { index: number, total: number }
+type DefinitionProps = Omit<DictionaryDefinition, 'license'> & { index: number, total: number, handleTermSearch: (searchTerm: string) => Promise<void> }
 
 const Definition = (props: DefinitionProps) => {
     const {
@@ -18,7 +18,6 @@ const Definition = (props: DefinitionProps) => {
     const audio = phonetics.find(phonetic => phonetic.audio)?.audio ?? "";
     const playButtonAriaLabel = audio && `Play sound ${word}`;
     const { sourceUrls, index, total } = restProps;
-    const sourceUrl = sourceUrls.find(url => url.includes(word))
 
     return (
         <div className='definition'>
@@ -34,7 +33,7 @@ const Definition = (props: DefinitionProps) => {
                 </div>}
             </div>
             <div className='definition__meanings'>
-                {meanings.map((meaning, index) => <Meaning {...meaning} key={word + index + new Date().getTime() + '_meaning'}/>)}
+                {meanings.map((meaning, index) => <Meaning {...meaning} key={word + index + new Date().getTime() + '_meaning'} handleTermSearch={restProps.handleTermSearch}/>)}
             </div>
             {index === total-1 && <>
                 <Divider/>
@@ -43,8 +42,8 @@ const Definition = (props: DefinitionProps) => {
                         <div className='definition__source__link-label'>
                             Source
                         </div>
-                        <a href={sourceUrl} target="_blank" rel='noreferrer'>
-                            {sourceUrl}
+                        <a href={sourceUrls[0]} target="_blank" rel='noreferrer'>
+                            {decodeURI(sourceUrls[0])}
                         </a>
                         <div className='definition__source__link-icon'>
                             <NewWindowIcon title='open link in new window'/>

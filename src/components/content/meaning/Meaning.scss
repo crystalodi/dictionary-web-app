@@ -60,10 +60,17 @@
                 flex-wrap: wrap;
                 gap: 12px;
                 &-item {
-                    // change to meaning-other-terms-list-item-text-color
-                    color: #A445ED;
-                    font-family: var(--heading-large-font-family);
-                    font-size: 20px;;
+                    button {
+                        // change to meaning-other-terms-list-item-text-color
+                        color: #A445ED;
+                        font-family: var(--heading-large-font-family);
+                        font-size: 20px;
+                        cursor: pointer;
+                        background-color: transparent;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }           
             }
         }

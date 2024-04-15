@@ -1,5 +1,5 @@
 export type SearchBoxProps = {
-    handleDictionarySearch: (searchTerm: string) => void;
     validationError?: boolean;
+    handleButtonClick: () => void;
 } & React.ComponentPropsWithoutRef<'input'>;
 
