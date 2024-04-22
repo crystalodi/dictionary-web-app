@@ -26,6 +26,9 @@ const Search = () => {
         const res = await getDefinition(searchTerm);
         setDefinitions(res);
         setIsSearching(false);
+        if(searchInputRef.current && (searchTerm?.toLowerCase() !== searchInputRef?.current?.value.toLowerCase())) {
+            searchInputRef.current.value = searchTerm;
+        }
     }
 
     const handleButtonClick = () => {

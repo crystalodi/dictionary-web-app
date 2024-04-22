@@ -50,22 +50,22 @@
     --body-medium-line-height: 24px;
     --body-small-font-size: 14px;
     --body-small-line-height: 17px;
-    --part-of-speech-font-style: normal;
-    --part-of-speech-font-family: var(--sans-serif-font-family);
+    --meaning-heading-part-of-speech-font-style: normal;
+    --meaning-heading-part-of-speech-font-family: var(--sans-serif-font-family);
 }
 
 
 [data-font-style="mono"] {
     --heading-large-font-family: var(--mono-bold-font-family);
     --font-family: var(--mono-font-family);
-    --part-of-speech-font-family: var(--mono-font-family);
+    --meaning-heading-part-of-speech-font-family: var(--mono-font-family);
 }
 
 [data-font-style="sans-serif"] {
     --heading-large-font-family: var(--sans-serif-bold-font-family);
     --font-family: var(--sans-serif-font-family);
-    --part-of-speech-font-style: italic;
-    --part-of-speech-font-family: var(--sans-serif-bold-font-family);
+    --meaning-heading-part-of-speech-font-style: italic;
+    --meaning-heading-part-of-speech-font-family: var(--sans-serif-bold-font-family);
 }
 
 [data-font-style="serif"] {

@@ -1,12 +1,15 @@
 .font-select {
     position: relative;
-    background-color: var(--header-font-select-background-color);
+    background-color: var(--font-select-background-color);
+    &__accessible-text {
+        display: none;
+    }
     &__button {
         background-color: inherit;
         display: flex;
         align-items: center;
         cursor: pointer;
-        color: var(--header-font-select-text-color);
+        color: var(--font-select-text-color);
         &-selected-option {
             font-size: var(--body-medium-font-size);
             line-height: var(--body-medium-line-height);
@@ -34,15 +37,13 @@
         margin-top: 18px;
         right: 0px;
         transform: translateX(0%);
-        // add color for box shadow
-        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
-        // add header-font-select-dropdown-background-color
+        box-shadow: 0px 5px 30px 0px var(--font-select-dropdown-shadow-color);
         display: none;
         &--expanded {
             display: block;
         }
         &-option {
-            color: var(--header-font-select-text-color);
+            color: var(--font-select-text-color);
             font-size: var(--body-medium-font-size);
             line-height: var(--body-medium-line-height);
             margin-bottom: 16px;
@@ -60,10 +61,7 @@
             }
             &:hover {
                 cursor: pointer;
-                // add header-font-select-dropdown-option-text-color
-            }
-            &:focus-within {
-                outline: 1px dashed black;
+                color: var(--font-select-dropdown-option-text-hover-color);
             }
         }
     }

@@ -9,6 +9,8 @@
     --color_fff: #fff;
     --color_a445ed: #a445ed;
     --color_ff5252: #ff5252;
+    --color_e3e3e3: #e3e3e3;
+    --color_8f19e8: #8f19e8;
     
     --search-input-error-outline-color: var(--color_ff5252);
     --search-input-active-outline-color: var(--color_a445ed);
@@ -19,38 +21,41 @@
 
     --heading-medium-text-color: var(--color_a445ed);
 
-    --not-found-message-text: var(--color_757575);
-    --dictionary-term-word-color: var(--color_a445ed);
+    --not-found-message-text-color: var(--color_757575);
+    --definition-heading-term-phonetic-text-color: var(--color_a445ed);
+    --defintion-source-link-label-text-color: var(--color_757575);
+    --meaning-definitions-list-item-marker-color: var(--color_8f19e8);
+    --meaning-definitions-list-item-example-text-color: var(--color_757575);
+    --meaning-definitions-heading-text-color: var(--color_757575);
+    --meaning-other-terms-heading-text-color: var(--color_757575);
+    --meaning-other-terms-list-item-text-color: var(--color_a445ed);
+    --font-select-dropdown-option-text-hover-color: var(--color_a445ed);
 }
 
 [data-theme="dark"] {
-    --primary-background-color: #050505;
-    --primary-text-color: #fff;
-
-    --header-font-select-text-color: #fff;
-    --header-font-select-background-color: #050505;
+    --primary-background-color: var(--color_050505);
+    --primary-text-color: var(--color_fff);
+    --font-select-text-color: var(--color_fff);
+    --font-select-background-color: var(--color_050505);
+    --font-select-dropdown-shadow-color: var(--color_a445ed);
     --header-theme-switch-track-color: #a445ed;
-
     --search-input-background-color: #1f1f1f;
     --search-input-text-color: #fff;
-
-    --heading-large-text-color: #fff;
-    --not-found-message-title: #fff;
-    --divider-border-top-color: #3a3a3a;
+    --definition-heading-term-text-color: var(--color_fff);
+    --not-found-message-title-text-color: var(--color_fff);
+    --divider-border-top-color: var(--color_3a3a3a);
 }
 
 [data-theme="light"] {
     --primary-background-color: #fff;
     --primary-text-color: #050505;
-
-    --header-font-select-background-color: #fff;
-    --header-font-select-text-color: #2d2d2d;
+    --font-select-background-color: #fff;
+    --font-select-text-color: #2d2d2d;
+    --font-select-dropdown-shadow-color: rgba(0, 0, 0, 0.10);
     --header-theme-switch-track-color: #757575;
-
     --search-input-background-color: #f4f4f4;
     --search-input-text-color: #2d2d2d;
-
-    --heading-large-text-color: #2d2d2d;
-    --not-found-message-title: #2d2d2d;
-    --divider-border-top-color: #e3e3e3;
+    --definition-heading-term-text-color: var(--color_2d2d2d);
+    --not-found-message-title-text-color: var(--color_2d2d2d);
+    --divider-border-top-color: var(--color_e3e3e3);
 }

@@ -2,6 +2,13 @@
     background-color: transparent;
     cursor: pointer;
     &:hover {
-        // add play-button-hover-fill-color
+       g {
+            path {
+                fill: var(--color_fff)
+            }
+            circle {
+                opacity: 1;
+            }
+       }
     }
 }

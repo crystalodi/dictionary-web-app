@@ -12,16 +12,14 @@
                 font-family: var(--heading-large-font-family);
                 font-size: var(--heading-large-font-size);
                 line-height: var(--heading-large-line-height);
-                // change to definition-heading-term-text-color
-                color: var(--heading-large-text-color);
+                color: var(--definition-heading-term-text-color);
             }
             &-phonetic {
                 margin-top: 8px;
                 font-family: var(--heading-medium-font-family);
                 font-size: var(--heading-medium-font-size);
                 line-height: var(--heading-medium-line-height);
-                // change to definition-heading-term-phonetic-text-color
-                color: var(--dictionary-term-word-color);
+                color: var(--definition-heading-term-phonetic-text-color);
             }
         }
     }
@@ -38,8 +36,7 @@
             line-height: var(--body-small-line-height);
             &-label {
                 margin-right: 20px;
-                // change to search-defintion-source-link-label-text-color
-                color: #757575;
+                color: var(--defintion-source-link-label-text-color);
                 text-decoration: underline;
             } 
             &-icon {

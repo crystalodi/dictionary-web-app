@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon } from '../../../assets/icons';
 import { FontOption, FontSelectProps } from './FontSelect.props';
 import './FontSelect.scss';
@@ -22,27 +22,40 @@ const fontSelectOptions: FontOption[] = [
 ];
 
 const FontSelect = (props: FontSelectProps) => {
-    const { value = '1' } = props;
+    const listBoxRef = useRef<HTMLUListElement>(null);
+
+    const { value = '3' } = props;
     const [selectedValue, setSelectedValue] = useState(value);
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const fontSelectValue = fontSelectOptions.find(option => option.value === selectedValue);
+    const fontSelectValue = fontSelectOptions.find(option => option.value === selectedValue) as FontOption;
     const labelClasses = `font-select__button-selected-option font-select__button-selected-option--${fontSelectValue?.dataValue}`;
+
+    useEffect(() => {
+        document.body.setAttribute('data-font-style', fontSelectValue.dataValue);
+    }, [fontSelectValue])
+
 
     const toggleCombobox = () => {
         setIsExpanded(previousState => !previousState);
     }
 
+    const blurCombobox = (e: React.FocusEvent<HTMLButtonElement>) => {
+        if (listBoxRef?.current?.contains(e.relatedTarget)) {
+            return;
+        }
+
+        if (isExpanded) {
+           toggleCombobox();
+        }
+    }
+
     const selectOption = (e: React.MouseEvent<HTMLLIElement>) => {
         const selectedOptionValue = e.currentTarget.value.toString();
         if (selectedOptionValue !== selectedValue) {
-            setSelectedValue(e.currentTarget.value.toString());
+            setSelectedValue(selectedOptionValue);
         }
         toggleCombobox();
-    }
-
-    const handleOptionOnKeyUp = (e: any) => {
-        console.log(e);
     }
 
     const renderFontSelectOption = (option: FontOption) => {
@@ -58,9 +71,7 @@ const FontSelect = (props: FontSelectProps) => {
             aria-selected={value === fontSelectValue?.value} 
             value={value} 
             data-value={dataValue} 
-            onClick={selectOption} 
-            onKeyUp={handleOptionOnKeyUp}
-            tabIndex={0}
+            onClick={selectOption}
             >
                 {text}
             </li>
@@ -71,11 +82,12 @@ const FontSelect = (props: FontSelectProps) => {
 
     return (
         <div className="font-select">
-            <button className="font-select__button" aria-label='select font style' role='combobox' aria-controls='font-select-options' aria-expanded={isExpanded} onClick={toggleCombobox} tabIndex={0}>
+            <span className='font-select__accessible-text' id='font-select-label'>select font style</span>
+            <button className="font-select__button" aria-label='select font style' role='combobox' aria-controls='font-select-options' aria-expanded={isExpanded} onClick={toggleCombobox} tabIndex={0} onBlur={blurCombobox} aria-labelledby='font-select-label'>
                 <div className={labelClasses}>{fontSelectValue?.text}</div>
                 <div className="font-select__button-arrow-down-icon"><ArrowDownIcon title='toggle font styles'/></div>
             </button>
-            <ul className={listBoxClassNames} role='listbox' tabIndex={-1} id="font-select-options">
+            <ul className={listBoxClassNames} role='listbox' tabIndex={-1} id="font-select-options" ref={listBoxRef} aria-label='font styles'>
                 {fontSelectOptions.map(option => renderFontSelectOption(option))}
             </ul>
         </div>

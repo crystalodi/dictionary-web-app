@@ -10,14 +10,12 @@
         margin-bottom: 24px;
         font-family: var(--heading-large-font-family);
         font-size: 20px;
-        // change to not-found-message-title-text-color
-        color: var(--not-found-message-title);
+        color: var(--not-found-message-title-text-color);
         line-height: normal;
     }
     &-message {
         font-size: var(--body-medium-font-size);
         line-height: var(--body-medium-line-height);
-        // change to not-found-message-text-color
-        color: var(--not-found-message-text);
+        color: var(--not-found-message-text-color);
     }
 }
