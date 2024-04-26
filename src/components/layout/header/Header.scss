@@ -3,8 +3,16 @@
     &__content {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         &__controls {
-            margin-left: auto;
+            display: flex;
+            align-items: center;
+            column-gap: 26px;
+            &__theme {
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+            }
         }
     }
 }

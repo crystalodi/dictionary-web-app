@@ -1,5 +1,6 @@
-import { LogoIcon } from '../../../assets/icons';
+import { LogoIcon, MoonIcon } from '../../../assets/icons';
 import FontSelect from '../../ui/font-select';
+import ThemeSwitch from '../../ui/theme-switch';
 import './Header.scss';
 const Header = () => {
     return (
@@ -9,11 +10,10 @@ const Header = () => {
                     <LogoIcon width={32} height={36.5} title='Frontend Mentor Dictionary App'/>
                 </div>
                 <div className='header__content__controls'>
-                    <div className='header__content-controls__font-select'>
-                        <FontSelect value='2'/>
-                    </div>
-                    <div className='header__content-controls__theme'>
-                        
+                    <FontSelect value='2'/>
+                    <div className='header__content__controls__theme'>
+                        <ThemeSwitch/>
+                        <MoonIcon/>
                     </div>
                 </div>
             </div>

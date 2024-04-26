@@ -1,0 +1,50 @@
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+
+    input[type="checkbox"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .theme-switch-slider {
+        background-color: #757575;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color ease-out .4s;
+    }
+
+    .theme-switch-slider::before {
+        position: absolute;
+        top: 3px;
+        background-color: #fff;
+        content: "";
+        height: 14px;
+        width: 14px;
+        border-radius: 50px;
+        transform: translateX(3px);
+        transition: transform ease-out .4s;
+    }
+
+    input[type="checkbox"]:checked + .theme-switch-slider {
+        background-color: #A445ED;
+    }
+
+    input[type="checkbox"]:checked + .theme-switch-slider::before {
+        position: absolute;
+        top: 3px;
+        transform: translateX(23px);
+        content: "";
+    }
+}
