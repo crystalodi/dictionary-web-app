@@ -11,6 +11,7 @@ const Header = () => {
                 </div>
                 <div className='header__content__controls'>
                     <FontSelect value='2'/>
+                    <div className='header-divider'></div>
                     <div className='header__content__controls__theme'>
                         <ThemeSwitch/>
                         <MoonIcon/>

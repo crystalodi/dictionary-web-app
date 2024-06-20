@@ -13,7 +13,7 @@ const ThemeSwitch = (props: React.ComponentPropsWithoutRef<'input'>) => {
 
     return (
         <label className="theme-switch">
-            <input type="checkbox" checked={isChecked} onChange={toggleSwitch}/>
+            <input type="checkbox" checked={isChecked} onChange={toggleSwitch} aria-label='App theme'/>
             <span className="theme-switch-slider"></span>
         </label>
     )

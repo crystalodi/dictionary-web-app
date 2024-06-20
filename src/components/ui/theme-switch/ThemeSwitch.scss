@@ -23,6 +23,9 @@
         cursor: pointer;
         border-radius: 10px;
         transition: background-color ease-out .4s;
+        &:hover {
+            background-color: #A445ED;
+        }
     }
 
     .theme-switch-slider::before {
