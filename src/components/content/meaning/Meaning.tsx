@@ -1,46 +1,13 @@
 import { DictionaryDefinition } from "../../../utils/getDefinition.types";
 import Divider from "../../ui/divider";
 import './Meaning.scss';
+import DefinitionList from "./definition-list";
+import OtherTerms from "./other-terms"
 type MeaningProps = DictionaryDefinition["meanings"][0] & { handleTermSearch: (searchTerm: string) => Promise<void> };
-type Definition = Omit<MeaningProps["definitions"][0], 'synonyms' | 'antonyms'> & { index: number };
-type OtherTerms = {
-    list: string[];
-    label: 'Antonyms' | 'Synonyms'
-}
 
 const Meaning = (props: MeaningProps) => {
     const { synonyms, antonyms, definitions, partOfSpeech, handleTermSearch } = props;
     const showSynonymsAntonyms = !!synonyms.length || !!antonyms.length;
-
-    const renderDefinitionItem = (meaning: Definition) => {
-        const { definition, index, example } = meaning;
-        return (
-            <li key={'meaningListItem' + index + new Date().getTime()} className="meaning__definitions__list__item">
-                <div className="meaning__definitions__list__item-definition">
-                    {definition}
-                </div>
-                {example && <p className="meaning__definitions__list__item-example">
-                    <q>{example}</q>
-                </p>}
-            </li>
-        )
-    }
-
-    const renderOtherTerms = (otherTerms: OtherTerms) => {
-        const { list, label } = otherTerms;
-        return (
-            <div className="meaning__other__terms">
-                <div className="meaning__other__terms-label">
-                    {label}
-                </div>
-                <div className="meaning__other__terms__list" role="list">
-                    {list.map((item, index) => <div className="meaning__other__terms__list-item" role="listitem" key={label + index + new Date().getTime()}>
-                        <button onClick={() => handleTermSearch(item)}>{item}</button>
-                    </div>)}
-                </div>
-            </div>
-        );
-    }
 
     return (
         <div className="meaning">
@@ -49,18 +16,10 @@ const Meaning = (props: MeaningProps) => {
                 <Divider/>
             </div>
             <div className="meaning__definitions">
-                <div className="meaning__definitions-heading">Meaning</div>
-                <ul className="meaning__definitions__list">
-                    {definitions.map((meaning, index) => renderDefinitionItem({
-                        definition: meaning.definition,
-                        example: meaning.example,
-                        index
-                    }))}
-                </ul>
+                <DefinitionList definitions={definitions}/>
             </div>
             {showSynonymsAntonyms && <div className="meaning__other">
-                {!!synonyms.length && renderOtherTerms({label: 'Synonyms', list: synonyms})}
-                {!!antonyms.length && renderOtherTerms({label: 'Antonyms', list: antonyms})}
+                <OtherTerms antonyms={antonyms} synonyms={synonyms} handleTermSearch={handleTermSearch}/>
             </div>}
         </div>
     )

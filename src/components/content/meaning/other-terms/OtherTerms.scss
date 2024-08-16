@@ -1,0 +1,26 @@
+.other-terms {
+    display: flex;
+    &-label {
+        font-size: var(--heading-small-font-size);
+        line-height: var(--heading-small-line-height);
+        color: var(--meaning-other-terms-heading-text-color);
+        margin-right: 24px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        &-item {
+            button {
+                color: var(--meaning-other-terms-list-item-text-color);
+                font-family: var(--heading-large-font-family);
+                font-size: 20px;
+                cursor: pointer;
+                background-color: transparent;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }           
+    }
+}

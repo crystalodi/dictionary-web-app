@@ -1,0 +1,24 @@
+.definition-list {
+    &__list {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 13px;
+        &__item {
+            padding-left: 10px;
+            &::marker {
+                color: var(--meaning-definitions-list-item-marker-color);
+            }
+            &-example {
+                color: var(--meaning-definitions-list-item-example-text-color);
+                margin-top: 13px;
+            }
+        }
+    }
+    &-heading {
+        font-size: var(--heading-small-font-size);
+        line-height: var(--heading-small-line-height);
+        color: var(--meaning-definitions-heading-text-color);
+        margin-bottom: 25px;
+    }
+}
